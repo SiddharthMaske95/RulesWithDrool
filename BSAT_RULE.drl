@@ -1,0 +1,20 @@
+ package com.trial.bsat;
+ 
+ rule "Qualified"
+//ruleflow-group "FirstRule"
+ dialect "mvel"
+ when
+ $V:BSAT_Module(so_line_total>=1000, res_line_status.equals("closed")   )
+ then
+ $V.setStatus("Qualified");
+ end
+ 
+ rule "NotQualifie"
+// ruleflow-group "FirstRule"
+ dialect "mvel"
+ when
+ $V:BSAT_Module(so_line_total<=999,res_line_status.equals("closed") )
+ then
+ $V.setStatus("Not Qualified");
+ end
+
