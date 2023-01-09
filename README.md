@@ -1,0 +1,2 @@
+# RulesWithDrool
+calculating qualifying
